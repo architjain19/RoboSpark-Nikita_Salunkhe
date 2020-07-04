@@ -18,12 +18,12 @@ class Student
 
     //constructer student
     Student()
-    {
+    {   //declaring all the values to default
+        grades = 0;
+        credits = 0;
         cgpa=0; //initially cgpa is eqal to zero
-        getInput();// inputting data
-        cout << "\nTotal grades obtained : ";
-        cout << total() << endl;// total grades obtained    
-        showDetails();//cgpa details
+        name = "Default_name";
+        id = 0;
     }
 //student details
 void getInput()
@@ -78,7 +78,12 @@ float cal_cgpa()
 int main()
 {
     Student *s = new Student;
-    delete s;
+    s->getInput();// inputting data
+    cout << "\nTotal grades obtained : ";
+    cout << s->total() << endl;// total grades obtained    
+    s->showDetails();//cgpa details
+     delete s;
+    
 
 return 0;    
 }
